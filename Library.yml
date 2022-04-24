@@ -1,0 +1,32 @@
+DomainName: TheStacksLibrary
+BoundedContexts:
+- ProjectName: BooksManagement
+  Port: 10000
+  DbContext:
+    ContextName: BooksDbContext
+    DatabaseName: BooksManagement
+    Provider: postgres
+  Entities:
+  - Name: Book
+    Features:
+    - Type: GetRecord
+    - Type: GetList
+    - Type: AddRecord
+    - Type: UpdateRecord
+    - Type: DeleteRecord
+    Properties:
+    - Name: Title
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: PublicationYear
+      Type: int
+      CanFilter: true
+      CanSort: true
+    - Name: Description
+      Type: string
+      CanFilter: true
+      CanSort: true
+  SwaggerConfig:
+    Title: theStacks Library
+    Description: This is a REST API for theStacks library. You can do anything you want with it!
